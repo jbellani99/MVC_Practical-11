@@ -1,0 +1,50 @@
+﻿@model Practical11MVC.ViewModels.EmployeeViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+
+@if (TempData.ContainsValue("Details"))
+{
+    Html.RenderPartial("~/Views/Test2/_Details.cshtml", Model.Employees);
+}
+
+
+@if (TempData.ContainsValue("Create"))
+{
+    Html.RenderPartial("~/Views/Test2/_Create.cshtml");
+}
+@if (TempData.ContainsValue("Edit"))
+{
+    Html.RenderPartial("~/Views/Test2/_Edit.cshtml", Model);
+}
+ @if(TempData.ContainsValue("Delete"))
+ {
+
+     Html.RenderPartial("~/Views/Test2/_Delete.cshtml", Model);
+
+ }
+
+
+@*@if (ViewBag.name == "Details")
+{
+
+    Html.RenderPartial("~/Views/Test2/_Details.cshtml", Model);
+}
+
+
+@if (ViewBag.name == "Create")
+{
+
+    Html.RenderPartial("~/Views/Test2/_Create.cshtml", Model);
+}*@
+
+@*@if (ViewBag.name == null)
+    {
+
+        Html.RenderPartial("~/Views/Shared/Error.cshtml", Model);
+    }*@
